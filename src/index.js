@@ -29,6 +29,11 @@ function fetchToyCollection() {
       toyName.innerText = toyObject.name;
       toyCard.appendChild(toyName);
 
+      const toyImage = document.createElement('img');
+      toyImage.src = toyObject.image;
+      toyImage.setAttribute('class', 'toy-avatar');
+      toyCard.appendChild(toyImage);
+
 
     }
   })
