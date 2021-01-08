@@ -37,6 +37,9 @@ function fetchToyCollection() {
       const toyLikes = document.createElement('p');
       toyLikes.innerText = `${toyObject.likes} Likes`;
       toyCard.appendChild(toyLikes);
+
+      const likeBtn = document.createElement('button');
+      likeBtn.setAttribute('class', 'like-btn');
     }
   })
 }
