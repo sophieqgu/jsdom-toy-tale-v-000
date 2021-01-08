@@ -23,8 +23,8 @@ function fetchToyCollection() {
   .then(json => {
     for (const toy in json.message) {
       const toyCard = document.createElement('div');
-      element.innerText = toy;
-      toyCollection.appendChild(element);
+      toyCard.setAttribute('class', 'card');
+      
     }
   })
 }
