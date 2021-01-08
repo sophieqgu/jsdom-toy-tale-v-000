@@ -85,3 +85,25 @@ function addNewToy(event) {
     toyFormContainer.style.display = "none"
   });
 }
+
+function likeToy(event) {
+  event.preventDefault()
+  let newLikes = parseInt(event.target.previousElementSibling.innerText) + 1
+
+  let configObj = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      'likes' : newLikes
+    })
+  };
+
+  fetch(`http://localhost:3000/toys/${event.target.id}`, configObj)
+  .then(response => response.json())
+  .then(
+    event.target.previousElementSibling.innerText = `${newLikes} Likes`
+  );
+}l
