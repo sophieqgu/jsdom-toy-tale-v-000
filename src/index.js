@@ -45,8 +45,8 @@ function fetchToyCollection() {
       likeBtn.addEventListener('click', event => {
         likeToy(event)
       })
+      toyCard.appendChild(likeBtn);
 
-      
     }
   })
 }
