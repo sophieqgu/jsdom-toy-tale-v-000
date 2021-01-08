@@ -21,8 +21,8 @@ function fetchToyCollection() {
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(json => {
-    for (const toy of json.message) {
-      let element = document.createElement('div.card');
+    for (const toy in json.message) {
+      const toyCard = document.createElement('div');
       element.innerText = toy;
       toyCollection.appendChild(element);
     }
