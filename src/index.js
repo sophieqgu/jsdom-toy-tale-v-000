@@ -21,10 +21,15 @@ function fetchToyCollection() {
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(json => {
-    for (const toy in json.message) {
+    for (const toyObject in json.message) {
       const toyCard = document.createElement('div');
       toyCard.setAttribute('class', 'card');
-      
+
+      const toyName = document.createElement('h2');
+      toyName.innerText = toyObject.name;
+      toyCard.appendChild(toyName);
+
+
     }
   })
 }
