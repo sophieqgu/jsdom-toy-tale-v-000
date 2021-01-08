@@ -57,5 +57,28 @@ function renderToy(toyObject) {
 }
 
 function addNewToy(event) {
-  event.prevent
+  event.preventDefault()
+  const toyFormContainer = document.querySelector(".container");
+
+  let formData = {
+    name: event.target.name.value,
+    image: event.target.image.value,
+    likes: 0
+  };
+
+  let configObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(formData)
+  };
+
+  fetch("http://localhost:3000/toys", configObj)
+  .then(response => response.json())
+  .then(object => {
+    renderToy(object),
+    toyFormContainer.style.display = "none"
+  });
 }
