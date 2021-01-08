@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     addToy = !addToy;
     if (addToy) {
       toyFormContainer.style.display = "block";
+      toyFormContainer.addEventListener('submit', event => {
+        addNewToy(event)
+      })
     } else {
       toyFormContainer.style.display = "none";
     }
