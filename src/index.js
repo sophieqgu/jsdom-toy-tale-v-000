@@ -34,7 +34,9 @@ function fetchToyCollection() {
       toyImage.setAttribute('class', 'toy-avatar');
       toyCard.appendChild(toyImage);
 
-
+      const toyLikes = document.createElement('p');
+      toyLikes.innerText = `${toyObject.likes} Likes`;
+      toyCard.appendChild(toyLikes);
     }
   })
 }
