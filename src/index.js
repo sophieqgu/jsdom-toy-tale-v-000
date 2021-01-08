@@ -57,5 +57,5 @@ function renderToy(toyObject) {
 }
 
 function addNewToy(event) {
-  
+  event.prevent
 }
