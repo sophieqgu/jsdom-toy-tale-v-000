@@ -17,4 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fetchToyCollection() {
   const toyCollection = document.getElementById('toy-collection');
+
+  fetch("https://dog.ceo/api/breeds/image/random/4")
+  .then(response => response.json())
+  .then(json => {
+    for (const img of json.message) {
+      let element = document.createElement('img');
+      element.src = img;
+      document.body.appendChild(element);
+    }
+  })
 }
