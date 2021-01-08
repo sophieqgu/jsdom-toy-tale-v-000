@@ -16,11 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchToyCollection() {
-  const toyCollection = document.getElementById('toy-collection');
 
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(json => {
+    const toyCollection = document.getElementById('toy-collection');
+
     for (const toyObject in json.message) {
       const toyCard = document.createElement('div');
       toyCard.setAttribute('class', 'card');
@@ -47,6 +48,7 @@ function fetchToyCollection() {
       })
       toyCard.appendChild(likeBtn);
 
+      toyCollection.appendChild(toyCard);
     }
   })
 }
