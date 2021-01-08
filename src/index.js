@@ -40,6 +40,8 @@ function fetchToyCollection() {
 
       const likeBtn = document.createElement('button');
       likeBtn.setAttribute('class', 'like-btn');
+      likeBtn.setAttribute('id', toyObject.id)
+      likeBtn.innerText = 'Like <3';
     }
   })
 }
