@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function fetchToyCollection() {
   const toyCollection = document.getElementById('toy-collection');
 
-  fetch("https://dog.ceo/api/breeds/image/random/4")
+  fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(json => {
     for (const img of json.message) {
