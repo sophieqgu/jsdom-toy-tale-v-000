@@ -21,10 +21,10 @@ function fetchToyCollection() {
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(json => {
-    for (const img of json.message) {
-      let element = document.createElement('img');
-      element.src = img;
-      document.body.appendChild(element);
+    for (const toy of json.message) {
+      let element = document.createElement('div.card');
+      element.innerText = toy;
+      toyCollection.appendChild(element);
     }
   })
 }
