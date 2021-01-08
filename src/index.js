@@ -1,6 +1,7 @@
 let addToy = false;
 
 document.addEventListener("DOMContentLoaded", () => {
+  fetchToyCollection();
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
@@ -13,3 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function fetchToyCollection() {
+  const toyCollection = document.getElementById('toy-collection');
+}
