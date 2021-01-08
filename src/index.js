@@ -42,6 +42,11 @@ function fetchToyCollection() {
       likeBtn.setAttribute('class', 'like-btn');
       likeBtn.setAttribute('id', toyObject.id)
       likeBtn.innerText = 'Like <3';
+      likeBtn.addEventListener('click', event => {
+        likeToy(event)
+      })
+
+      
     }
   })
 }
